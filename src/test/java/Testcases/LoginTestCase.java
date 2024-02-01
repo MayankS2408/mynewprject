@@ -8,27 +8,23 @@ import org.testng.annotations.Test;
 
 import Browser.browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pom.TC_Automationhomepage;
+import pom.TC_LoginPage;
 
-public class AutomationhomepageTestPages {
+public class LoginTestCase {
 
+	TC_LoginPage T;
 	static WebDriver driver;
-	TC_Automationhomepage T;
 
 	@BeforeTest
-	public void setup() {
+	public void Setup() {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = browser.getdriver("chrome");
-		T = new TC_Automationhomepage(driver);
+		T = new TC_LoginPage(driver);
 	}
 
-	@Test(priority=1)
-	public void Signup() throws InterruptedException, IOException {
-		T.verifysignup();
+	@Test
+	public void loginpage() throws IOException {
+		T.Loginapplication();
 	}
 
-	@Test(priority=2)
-	public void Acoountcreation() throws IOException {
-		T.createaccount();
-	}
 }

@@ -15,12 +15,12 @@ import java.io.IOException;
 
 import org.junit.Assert;
 
-public class TC_Automationhomepage {
+public class TC_CreatingUser {
 
 	WebDriver driver;
 	file_utility file = new file_utility();
 
-	public TC_Automationhomepage(WebDriver driver) {
+	public TC_CreatingUser(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
