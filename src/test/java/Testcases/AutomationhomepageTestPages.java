@@ -25,7 +25,7 @@ public class AutomationhomepageTestPages {
 		T.signupactions();
 	}
 
-	@Test
+	@Test()
 	public void Signup() throws InterruptedException {
 		T.verifysignup();
 	}
