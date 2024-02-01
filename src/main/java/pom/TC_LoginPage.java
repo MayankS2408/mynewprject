@@ -42,7 +42,6 @@ public class TC_LoginPage {
 		email.sendKeys(Email);
 		password.sendKeys(Password);
 		Loginbtn.click();
-		Loginbtn.click();
 
 	}
 	
