@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import Browser.browser;
+import File_utility.file_utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pom.TC_LoginPage;
 
@@ -14,11 +15,14 @@ public class LoginTestCase {
 
 	TC_LoginPage T;
 	static WebDriver driver;
+	file_utility file = new file_utility(); 
 
 	@BeforeTest
-	public void Setup() {
+	public void Setup() throws IOException {
+		
+		String broswername= file.fetchfromthepropertyfile("browsername");
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = browser.getdriver("chrome");
+		WebDriver driver = browser.getdriver(broswername);
 		T = new TC_LoginPage(driver);
 	}
 
