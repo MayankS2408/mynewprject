@@ -20,13 +20,13 @@ public class AutomationhomepageTestPages {
 		T = new TC_Automationhomepage(driver);
 	}
 
-	@Test
-	public void homepqagetitleverification() {
-		T.signupactions();
-	}
-
-	@Test()
+	@Test(priority=1)
 	public void Signup() throws InterruptedException {
 		T.verifysignup();
+	}
+
+	@Test(priority=2)
+	public void Acoountcreation() {
+		T.createaccount();
 	}
 }
