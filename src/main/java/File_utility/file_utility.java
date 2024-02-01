@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 public class file_utility {
 
 	public String fetchfromthepropertyfile(String key) throws IOException {
@@ -16,4 +19,11 @@ public class file_utility {
 		return pro.getProperty(key);
 
 	}
+	
+	public static void Selectclass (WebElement element,int value) {
+		Select select= new Select(element);
+		select.selectByIndex(value);
+	}
+	
+	
 }
