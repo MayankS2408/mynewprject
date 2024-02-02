@@ -12,14 +12,14 @@ import File_utility.file_utility;
 public class TC_LoginPage {
 
 	WebDriver driver;
-	file_utility file= new file_utility();
-	
-	public TC_LoginPage(WebDriver driver){
+	file_utility file = new file_utility();
+
+	public TC_LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		this.driver=driver;
-		
+		this.driver = driver;
+
 	}
-	
+
 	@FindBy(xpath = "//a[@href='/login']")
 	WebElement login;
 
@@ -28,21 +28,26 @@ public class TC_LoginPage {
 
 	@FindBy(xpath = "//input[@name='password']")
 	WebElement password;
-	
-	@FindBy(xpath="//button[text()='Login']")
+
+	@FindBy(xpath = "//button[text()='Login']")
 	WebElement Loginbtn;
 
-	
+	@FindBy(xpath = "//button[text()='Test Cases']")
+	WebElement Testcases;
+
 	public void Loginapplication() throws IOException {
-		
+
 		String Email = file.fetchfromthepropertyfile("email");
 		String Password = file.fetchfromthepropertyfile("password");
-		
+
+		String A = Testcases.getCssValue("background-color");
+		System.out.println(A);
+
 		login.click();
 		email.sendKeys(Email);
 		password.sendKeys(Password);
 		Loginbtn.click();
 
 	}
-	
+
 }
