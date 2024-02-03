@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Excel.Excellibrary;
 import File_utility.file_utility;
 
 public class TC_LoginPage {
@@ -37,14 +38,15 @@ public class TC_LoginPage {
 
 	public void Loginapplication() throws IOException {
 
-		String Email = file.fetchfromthepropertyfile("email");
 		String Password = file.fetchfromthepropertyfile("password");
+		Excellibrary excel = new Excellibrary();
+		String mail = excel.readdata("Sheet1", 1, 0);
 
 		String A = Testcases.getCssValue("background-color");
 		System.out.println(A);
 
 		login.click();
-		email.sendKeys(Email);
+		email.sendKeys(mail);
 		password.sendKeys(Password);
 		Loginbtn.click();
 
