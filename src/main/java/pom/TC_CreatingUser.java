@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Excel.Excellibrary;
 import File_utility.file_utility;
 import constant.constant;
 
@@ -81,8 +82,9 @@ public class TC_CreatingUser {
 
 	public void verifysignup() throws InterruptedException, IOException {
 
-		String Name = file.fetchfromthepropertyfile("name");
-		String Email = file.fetchfromthepropertyfile("email");
+		Excellibrary excel = new Excellibrary();
+		String Name = excel.readdata("Sheet1", 1, 2);
+		String Email = excel.readdata("Sheet1", 1, 0);
 		login.click();
 		name.sendKeys(Name);
 		email.sendKeys(Email);
@@ -92,14 +94,16 @@ public class TC_CreatingUser {
 
 	public void createaccount() throws IOException {
 
-		String Password = file.fetchfromthepropertyfile("password");
-		String Firstname = file.fetchfromthepropertyfile("Firstname");
-		String Lastname = file.fetchfromthepropertyfile("Lastname");
-		String Address = file.fetchfromthepropertyfile("Address");
-		String State = file.fetchfromthepropertyfile("State");
-		String City = file.fetchfromthepropertyfile("City");
-		String Zipcode = file.fetchfromthepropertyfile("Zipcode");
-		String Mobilenumber = file.fetchfromthepropertyfile("Mobilenumber");
+
+		Excellibrary excel = new Excellibrary();
+		String Password = excel.readdata("Sheet1", 1, 1);
+		String Firstname = excel.readdata("Sheet1", 1, 3);
+		String Lastname = excel.readdata("Sheet1", 1, 4);
+		String Address = excel.readdata("Sheet1", 1, 5);
+		String State =excel.readdata("Sheet1", 1, 6);
+		String City = excel.readdata("Sheet1", 1, 7);
+		String Zipcode = excel.readdata("Sheet1", 1, 8);
+		String Mobilenumber = excel.readdata("Sheet1", 1, 9);
 
 		gender.click();
 		gender.isSelected();
