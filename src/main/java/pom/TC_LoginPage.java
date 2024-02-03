@@ -18,7 +18,6 @@ public class TC_LoginPage {
 	public TC_LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
-
 	}
 
 	@FindBy(xpath = "//a[@href='/login']")
