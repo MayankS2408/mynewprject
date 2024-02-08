@@ -32,5 +32,10 @@ public class file_utility {
 		Select select= new Select(element);
 		select.selectByIndex(value);
 	}
+	
+	public void Click(WebElement element) {
+		element.click();
+		
+	}
 
 }
