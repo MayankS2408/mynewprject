@@ -17,10 +17,6 @@ public class TC_AddToCart {
 		this.driver = driver;
 	}
 	
-//	@FindBy(xpath="//div[@id='accordian']")
-//	WebElement Category;
-	
-
 	public void Category() throws InterruptedException {
 		
 		List<WebElement>list= driver.findElements(By.xpath("//div[@id='accordian']"));
